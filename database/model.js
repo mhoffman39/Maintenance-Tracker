@@ -7,6 +7,10 @@ const taskSchema = Schema({
   nextDue: Date,
   periodicity: Number,
   youtube: String,
+  notes: String,
 })
 
 module.exports = mongoose.model('Task', taskSchema);
+
+
+

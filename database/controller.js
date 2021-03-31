@@ -1,7 +1,8 @@
-const tasks = require('./model.js');
+const tasks = require('./app.js');
 
 exports.getTasks = async(req, res) => {
-  console.log('test get')
+  const results = await tasks.getTaskers();
+  res.send(results);
 };
 
 exports.createTasks = async(req, res) => {
