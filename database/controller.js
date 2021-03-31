@@ -10,7 +10,10 @@ exports.createTasks = async(req, res) => {
 };
 
 exports.updateTasks = async(req, res) => {
-  console.log('test put')
+  const id = req.originalUrl.slice(10);
+  const date = req.body;
+  const results = await tasks.updateTasker(id, date);
+  res.status(200);
 };
 
 exports.deleteTasks = async(req, res) => {

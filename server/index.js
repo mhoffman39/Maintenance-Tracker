@@ -10,9 +10,11 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/tasks', controller.getTasks);
 
+app.patch('/tasks', controller.updateTasks);
+
+
 // app.post('/tasks', controller.createTasks);
 
-// app.put('/tasks', controller.updateTasks);
 
 // app.delete('/tasks', controller.deleteTasks);
 

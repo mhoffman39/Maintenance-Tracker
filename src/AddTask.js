@@ -27,7 +27,16 @@ class AddTask extends React.Component {
           <label>
             Date:
             <input type="date" name="date" value={this.state.date} onChange={this.handleChange} />
+          </label>
+          <label>
+            Job:
             <input type="text" name="task" value={this.state.task} onChange={this.handleChange} />
+          </label>
+          <label>
+            Periodicity:
+            <select value={this.state.periodicity} onChange={this.handleChange}>
+              <option value="monthly">Monthly</option>
+            </select>
           </label>
         </form>
       </div>

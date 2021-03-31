@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import AddTask from './AddTask'
+import TaskList from './TaskList'
 
 class App extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class App extends React.Component {
       tasks: [],
     }
     this.getTasks = this.getTasks.bind(this);
+    this.updateTasks = this.updateTasks.bind(this);
   }
   componentDidMount() {
     this.getTasks();
@@ -26,12 +28,21 @@ class App extends React.Component {
     })
   }
 
+  updateTasks(id, date) {
+    axios.patch(`/tasks?ID=${id}`, {nextDue: date})
+    .then(this.getTasks())
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <h1>Hello World</h1>
-        <AddTask />
-        <TaskList />
+        <h1>Home Maintenance</h1>
+        <h3>made simple</h3>
+        {/* <AddTask /> */}
+        <TaskList tasks={this.state.tasks} callback={this.updateTasks}/>
       </div>
     );
   }
