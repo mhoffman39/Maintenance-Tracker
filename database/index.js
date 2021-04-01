@@ -5,7 +5,7 @@ mongoose.connect('mongodb://localhost:27017/Tasks', {useNewUrlParser: true, useU
 
 
 const arr = [
-  {name: 'Drain sediment from water heater', periodicity: 365, nextDue: '2021-3-28'},
+  {name: 'Drain sediment fromwater heater', periodicity: 365, nextDue: '2021-3-28'},
   {name: 'Lubricate garage door springs', periodicity: 400, nextDue: '2022-3-1'},
   {name: 'Clean behind washer/dryer', periodicity: 365, nextDue: '2021-7-31'},
   {name: 'Wash windows', periodicity: 365, nextDue: '2021-5-1'},

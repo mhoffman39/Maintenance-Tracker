@@ -10,11 +10,7 @@ exports.updateTasker = async(id, date) => {
   console.log(id, date)
   const dateString = date.nextDue.slice(0,10);
   await Task.updateOne({_id: id}, {nextDue: dateString}, function (err, docs) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(docs)
-    }
+    if (err) return console.log(err);
   })
 }
 
@@ -26,5 +22,5 @@ exports.addTasker = async(date, task, periodicity) => {
 }
 
 exports.deleteTasker = async(id) => {
-  const deleteTask = await Task.deleteOne(id);
+  await Task.deleteOne(id);
 }

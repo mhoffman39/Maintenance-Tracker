@@ -2,25 +2,16 @@ body {
   /* margin: 0; */
   font-size: 25px;
   background-color: antiquewhite;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Poppins', sans-serif;
 }
 
 h1 {
-  margin-top: 50px;
+  margin: 50px 0px 0px 50px;
 }
 h3 {
-  margin: 0;
+  margin: 0px 0px 20px 50px;
 }
 
-.App {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-}
 .window {
   width: 100%;
   display: flex;
@@ -29,13 +20,6 @@ h3 {
   border-top: solid 3px #1D7D3A;
 }
 
-.add {
-  /* width: 60%; */
-}
-
-.list {
-  /* display: flex; */
-}
 
 .taskTile {
   width: 1000px;
@@ -57,7 +41,21 @@ h3 {
   cursor: pointer;
   margin: 5px;
   border-radius: 10px;
+  width: 100px
 }
 
+.addTask {
+  display: flex;
+  flex-direction: column;
+}
 
-/* <div>Icons made by <a href="https://www.flaticon.com/authors/pixelmeetup" title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */
+input {
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  margin: 0px 0px 10px 0px;
+}
+
+.enter {
+  margin: 20px 40% 0px 40%;
+}

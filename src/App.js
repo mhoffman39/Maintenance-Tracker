@@ -85,7 +85,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Home Maintenance</h1>
+        <h1>home maintenance</h1>
         <h3>made simple</h3>
         <div className="window">
           <AddTask className="add" callback={this.addTask}/>

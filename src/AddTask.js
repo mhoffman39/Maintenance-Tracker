@@ -28,18 +28,18 @@ class AddTask extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="addTask">
         <h2>add task</h2>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Job:
+        <form onSubmit={this.handleSubmit} >
+          <label className="jobForm">
+            job:
             <input type="text" name="task" value={this.state.task} onChange={this.handleChange} />
           </label>
           <label>
-            Periodicity: (in days)
+            periodicity: (in days)
             <input type="text" name="periodicity" value={this.state.periodicity} onChange={this.handleChange} />
           </label>
-          <button className="btn submit" onClick={this.handleClick}>Enter</button>
+          <button className="btn enter" onClick={this.handleClick}>Enter</button>
         </form>
       </div>
     )
