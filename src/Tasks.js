@@ -1,4 +1,7 @@
 import React from 'react';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 const Tasks = ({task, callback}) =>{
 
@@ -7,7 +10,6 @@ const Tasks = ({task, callback}) =>{
     let id = task._id;
     const date = new Date();
     const newDate = date.addDays(periodicity);
-    console.log(newDate);
     callback(id, newDate);
   }
 
@@ -22,7 +24,7 @@ const Tasks = ({task, callback}) =>{
     <div className="taskTile">
       <div className="date">{task.nextDue.slice(0, 10)}</div>
       <div className="task">{task.name}</div>
-      <button onClick={handleClick}>Complete</button>
+      <button className="btn complete" onClick={handleClick}>Complete</button>
     </div>
   )
 }

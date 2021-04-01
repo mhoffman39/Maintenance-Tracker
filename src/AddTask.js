@@ -16,7 +16,10 @@ class AddTask extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log('test')
+    event.preventDefault();
+    const task = this.state.task;
+    const periodicity = this.state.periodicity;
+    this.props.callback(task, periodicity);
   }
 
   render() {
@@ -25,19 +28,14 @@ class AddTask extends React.Component {
         <h2>add task</h2>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Date:
-            <input type="date" name="date" value={this.state.date} onChange={this.handleChange} />
-          </label>
-          <label>
             Job:
             <input type="text" name="task" value={this.state.task} onChange={this.handleChange} />
           </label>
           <label>
-            Periodicity:
-            <select value={this.state.periodicity} onChange={this.handleChange}>
-              <option value="monthly">Monthly</option>
-            </select>
+            Periodicity: (in days)
+            <input type="text" name="periodicity" value={this.state.periodicity} onChange={this.handleChange} />
           </label>
+          <button className="btn submit" onClick={this.handleClick}>Enter</button>
         </form>
       </div>
     )

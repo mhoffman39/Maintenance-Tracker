@@ -6,7 +6,11 @@ exports.getTasks = async(req, res) => {
 };
 
 exports.createTasks = async(req, res) => {
-  console.log('test post')
+  const date = req.body.nextDue.slice(0, 10);
+  const task = req.body.name;
+  const periodicity = parseInt(req.body.periodicity);
+  const results = await tasks.addTasker(date, task, periodicity);
+  res.status(200);
 };
 
 exports.updateTasks = async(req, res) => {

@@ -12,6 +12,7 @@ class App extends React.Component {
     }
     this.getTasks = this.getTasks.bind(this);
     this.updateTasks = this.updateTasks.bind(this);
+    this.addTask = this.addTask.bind(this);
   }
   componentDidMount() {
     this.getTasks();
@@ -29,7 +30,26 @@ class App extends React.Component {
   }
 
   updateTasks(id, date) {
+    console.log('test')
     axios.patch(`/tasks?ID=${id}`, {nextDue: date})
+    .then(this.getTasks())
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
+
+
+  addTask(task, periodicity) {
+    const date = new Date();
+    const a = date.getDate() + parseInt(periodicity)
+    const epoch = date.setDate(a)
+    const dueDate= new Date(epoch)
+
+    axios.post('/tasks', {
+      nextDue: dueDate,
+      name: task,
+      periodicity: periodicity,
+    })
     .then(this.getTasks())
     .catch(function(error) {
       console.log(error);
@@ -41,8 +61,12 @@ class App extends React.Component {
       <div className="App">
         <h1>Home Maintenance</h1>
         <h3>made simple</h3>
-        {/* <AddTask /> */}
-        <TaskList tasks={this.state.tasks} callback={this.updateTasks}/>
+        <div className="window">
+          <AddTask className="add" callback={this.addTask}/>
+          <div>
+            <TaskList className="list" tasks={this.state.tasks} callback={this.updateTasks}/>
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,5 +1,7 @@
 body {
-  margin: 0;
+  /* margin: 0; */
+  font-size: 25px;
+  background-color: antiquewhite;
 }
 
 code {
@@ -15,17 +17,45 @@ h3 {
 }
 
 .App {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
 }
+.window {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-top: solid 3px #1D7D3A;
+}
+
+.add {
+  /* width: 60%; */
+}
+
+.list {
+  /* display: flex; */
+}
+
 .taskTile {
-  width: 70%;
+  width: 1000px;
   height: 200px;
   margin: 25px 0px;
   border-radius: 25px;
-  background-color: aquamarine;
+  background-color: #1D7D3A;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+
+.btn {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+/* <div>Icons made by <a href="https://www.flaticon.com/authors/pixelmeetup" title="Pixelmeetup">Pixelmeetup</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> */

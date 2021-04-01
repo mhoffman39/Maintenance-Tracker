@@ -12,8 +12,7 @@ app.get('/tasks', controller.getTasks);
 
 app.patch('/tasks', controller.updateTasks);
 
-
-// app.post('/tasks', controller.createTasks);
+app.post('/tasks', controller.createTasks);
 
 
 // app.delete('/tasks', controller.deleteTasks);
