@@ -1,9 +1,9 @@
 import React from 'react';
 import Tasks from './Tasks.js';
 
-const TaskList = ({tasks, callback}) => (
+const TaskList = ({tasks, callback, deleteTask}) => (
   tasks.map((task) => {
-    return <Tasks  task={task} callback={callback}/>
+    return <Tasks  task={task} callback={callback} deleteTask={deleteTask}/>
   })
 )
 

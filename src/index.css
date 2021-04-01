@@ -39,7 +39,7 @@ h3 {
 
 .taskTile {
   width: 1000px;
-  height: 200px;
+  height: 150px;
   margin: 25px 0px;
   border-radius: 25px;
   background-color: #1D7D3A;
@@ -55,6 +55,8 @@ h3 {
   padding: 12px;
   font-size: 16px;
   cursor: pointer;
+  margin: 5px;
+  border-radius: 10px;
 }
 
 

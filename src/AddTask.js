@@ -20,6 +20,10 @@ class AddTask extends React.Component {
     const task = this.state.task;
     const periodicity = this.state.periodicity;
     this.props.callback(task, periodicity);
+    this.setState({
+      task: '',
+      periodicity: '' ,
+    })
   }
 
   render() {

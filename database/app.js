@@ -24,3 +24,7 @@ exports.addTasker = async(date, task, periodicity) => {
     if (err) return console.log(err)
   })
 }
+
+exports.deleteTasker = async(id) => {
+  const deleteTask = await Task.deleteOne(id);
+}

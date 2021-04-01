@@ -1,9 +1,6 @@
 import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
-
-const Tasks = ({task, callback}) =>{
+const Tasks = ({task, callback, deleteTask}) =>{
 
   const handleClick = (event) => {
     let periodicity = task.periodicity;
@@ -11,6 +8,10 @@ const Tasks = ({task, callback}) =>{
     const date = new Date();
     const newDate = date.addDays(periodicity);
     callback(id, newDate);
+  }
+
+  const handleDelete = (event) => {
+    deleteTask(task._id)
   }
 
   // eslint-disable-next-line no-extend-native
@@ -24,7 +25,10 @@ const Tasks = ({task, callback}) =>{
     <div className="taskTile">
       <div className="date">{task.nextDue.slice(0, 10)}</div>
       <div className="task">{task.name}</div>
-      <button className="btn complete" onClick={handleClick}>Complete</button>
+      <div>
+        <button className="btn complete" onClick={handleClick}>Complete</button>
+        <button className="btn delete" onClick={handleDelete}>Delete</button>
+      </div>
     </div>
   )
 }

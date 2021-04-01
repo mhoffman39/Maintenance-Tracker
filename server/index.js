@@ -14,8 +14,7 @@ app.patch('/tasks', controller.updateTasks);
 
 app.post('/tasks', controller.createTasks);
 
-
-// app.delete('/tasks', controller.deleteTasks);
+app.delete('/tasks', controller.deleteTasks);
 
 app.listen(port, () => {
   console.log('Server listening on port ', port);

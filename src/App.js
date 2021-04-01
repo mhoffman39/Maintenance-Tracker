@@ -13,7 +13,9 @@ class App extends React.Component {
     this.getTasks = this.getTasks.bind(this);
     this.updateTasks = this.updateTasks.bind(this);
     this.addTask = this.addTask.bind(this);
+    this.deleteTask = this.deleteTask.bind(this);
   }
+
   componentDidMount() {
     this.getTasks();
   }
@@ -56,6 +58,14 @@ class App extends React.Component {
     })
   }
 
+  deleteTask(id) {
+    axios.delete('/tasks', {data: {_id: id}})
+    .then(this.getTasks())
+    .catch(function(error) {
+      console.log(error);
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -64,7 +74,7 @@ class App extends React.Component {
         <div className="window">
           <AddTask className="add" callback={this.addTask}/>
           <div>
-            <TaskList className="list" tasks={this.state.tasks} callback={this.updateTasks}/>
+            <TaskList className="list" tasks={this.state.tasks} callback={this.updateTasks} deleteTask={this.deleteTask}/>
           </div>
         </div>
       </div>

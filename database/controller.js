@@ -21,5 +21,6 @@ exports.updateTasks = async(req, res) => {
 };
 
 exports.deleteTasks = async(req, res) => {
-  console.log('test delete')
+  const id = req.body;
+  const results = await tasks.deleteTasker(id);
 };
