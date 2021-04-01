@@ -32,14 +32,21 @@ class App extends React.Component {
   }
 
   updateTasks(id, date) {
-    console.log('test')
+    // const temp = this.state.tasks;
+    // for(var i = 0; i < temp.length; i++) {
+    //   if (temp[i]._id === id) {
+    //     temp[i].nextDue = date;
+    //   }
+    // }
+    // this.setState({
+    //   tasks: temp,
+    // });
     axios.patch(`/tasks?ID=${id}`, {nextDue: date})
     .then(this.getTasks())
     .catch(function(error) {
       console.log(error);
     })
   }
-
 
   addTask(task, periodicity) {
     const date = new Date();
@@ -59,8 +66,17 @@ class App extends React.Component {
   }
 
   deleteTask(id) {
+    const newState = [];
+    for(var i = 0; i < this.state.tasks.length; i++) {
+      if (this.state.tasks[i]._id !== id) {
+        newState.push(this.state.tasks[i]);
+      }
+    }
+    this.setState({
+      tasks: newState,
+    })
     axios.delete('/tasks', {data: {_id: id}})
-    .then(this.getTasks())
+    .then(console.log('Item deleted'))
     .catch(function(error) {
       console.log(error);
     })
